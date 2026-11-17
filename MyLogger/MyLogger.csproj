@@ -7,17 +7,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <!-- NuGet Package Metadata -->
     <PackageId>VishalTrivedi.MyLogger</PackageId>
     <Version>1.0.0</Version>
-    <Authors>Vishal Trivedi</Authors>
-    <Company>Personal Learning</Company>
-    <Description>A reusable logging library for .NET applications.</Description>
+    <Authors>VishalTrivedi</Authors>
+    <Description>Reusable logging library for .NET applications</Description>
 
     <PackageTags>Logging;DotNet;Logger</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/VishalTrivedi2000/AzureDevOpsLearning</RepositoryUrl>
+
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
