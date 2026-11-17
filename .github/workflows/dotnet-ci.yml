@@ -1,4 +1,42 @@
 
+name: MyLogger NuGet CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-test-pack-publish:
+    name: Build, Test and Publish NuGet
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build Solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test --configuration Release --no-build
+
       - name: Generate NuGet Package
         shell: pwsh
         run: |
@@ -17,10 +55,11 @@
           }
 
           $packages | ForEach-Object {
-              Write-Host "Package found: $($_.FullName)"
+              Write-Host "Found package: $($_.FullName)"
           }
 
       - name: Publish to GitHub Packages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,8 +67,6 @@
           $packages = Get-ChildItem "${{ github.workspace }}\packages" -Filter "*.nupkg"
 
           foreach ($package in $packages) {
-              Write-Host "Publishing $($package.Name)"
-
               dotnet nuget push $package.FullName `
                 --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" `
                 --api-key $env:GITHUB_TOKEN `
