@@ -20,5 +20,10 @@ public class AppLogger
         Console.WriteLine(
             $"[{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}] WARNING: {message}");
     }
+      public void LogWarning2(string message)
+    {
+        Console.WriteLine(
+            $"[{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}] WARNING: {message}");
+    }
 }
 
