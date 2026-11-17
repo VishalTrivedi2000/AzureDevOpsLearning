@@ -1,27 +1,35 @@
 
-name: .NET CI Pipeline
+name: .NET NuGet CI Pipeline
 
 on: [push, pull_request]
 
 jobs:
   build:
-    name: Build and Test
     runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
 
-      - name: Restore NuGet Packages
+      - name: Restore
         run: dotnet restore
 
-      - name: Build Solution
+      - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Run Unit Tests
-        run: dotnet test --configuration Release --no-build
+      - name: Test
+        run: dotnet test --configuration Release
+
+      - name: Create NuGet Package
+        run: dotnet pack MyLogger/MyLogger.csproj --configuration Release --no-build --output ./packages
+
+      - name: Upload NuGet Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: MyLogger-NuGet-Package
+          path: packages/*.nupkg
