@@ -1,0 +1,11 @@
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\bin\Debug\net9.0\MyLogger.deps.json
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\bin\Debug\net9.0\MyLogger.dll
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\bin\Debug\net9.0\MyLogger.pdb
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.AssemblyInfoInputs.cache
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.AssemblyInfo.cs
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.csproj.CoreCompileInputs.cache
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.dll
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\refint\MyLogger.dll
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\MyLogger.pdb
+D:\projects\AzureDevOpsLearning\AzureDevOpsLearning\MyLogger\obj\Debug\net9.0\ref\MyLogger.dll
